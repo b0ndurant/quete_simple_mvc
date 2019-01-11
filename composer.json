@@ -1,0 +1,11 @@
+{
+    "name": "b0ndurant/quete_simple_mvc",
+    "description": "quete_mvc2",
+    "authors": [
+        {
+            "name": "b0ndurant",
+            "email": "martin.aurelien01@gmail.com"
+        }
+    ],
+    "require": {}
+}
