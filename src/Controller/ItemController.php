@@ -1,7 +1,15 @@
 <?php
+
+namespace Wcs\Controller;
+use Wcs\Model\ItemManager;
 // src/Controller/ItemController.php
-require __DIR__ . '/../Model/ItemManager.php';
 
-$items = selectAllItems();
+class ItemController {
 
-require __DIR__ . '/../View/item.php';
+	public function index() {
+		$itemManager = new ItemManager();
+		$items = $itemManager->selectAllItems();
+
+		require __DIR__ . '/../View/item.php';
+	}
+}
