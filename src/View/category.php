@@ -12,13 +12,13 @@
 
 <body>
     <section>
-        <h1>Items</h1>
+        <h1>Catégories</h1>
             <ul>
-            <?php foreach ($items as $item) : ?>
-                <li><?= $item['title'] ?><a href="/item/<?= $item['id'] ?>"> (voir l'item)</a></li>
+            <?php foreach ($categories as $category) : ?>
+                <li><?= $category['name'] ?><a href="/category/<?= $category['id'] ?>"> (voir la categorie)</a></li>
             <?php endforeach ?>
             </ul>
-        <p><a href="/categories">voir les categories</a></p>
+        <p><a href="/">retourner a la liste des items</a></p>
     </section>
 </body>
 </html>
