@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+{% block title %}categories{% endblock %}
+
+{% block body %}
+    <section>
+        <h1>Catégories</h1>
+            <ul>
+            {% for category in categories %}
+                <li>{{ category.name }}<a href="/category/{{ category.id }}"> (voir la categorie)</a></li>
+            {% endfor %}
+            </ul>
+        <p><a href="/">retourner a la liste des items</a></p>
+    </section>
+{% endblock %}
