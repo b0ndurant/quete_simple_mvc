@@ -6,6 +6,11 @@
     <ul>  
         <li>Id : {{ item.id }}</li> 
     </ul>  
-    <a href='/'>Back to list</a>
+    <p><a href="/item/edit/{{ item.id }}">Modifier l'item</a></p>
+    <form method="POST" action="/item/delete">
+    	<input type="hidden" name="id" value="{{ item.id }}">
+    	<input type="submit" name="delete" value="supprimer item" />
+    </form>
+    <p><a href='/'>Back to list</a></p>
    </main>  
 {% endblock %}
