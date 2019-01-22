@@ -34,9 +34,9 @@ class ItemController extends AbstractController {
 		    $item->setTitle($_POST['title']);
 
 		    $itemManager = new ItemManager($this->pdo);
-		    
+		    $id = $itemManager->insert($item);
 		    // l'objet $item hydraté est simplement envoyé en paramètre de insert()
-		    if (($id = $itemManager->insert($item)) == TRUE) {
+		    if ($id) {
 			   //  si tout se passe bien, redirection 
 
 			    header('Location: /item/'.$id);
@@ -64,15 +64,14 @@ class ItemController extends AbstractController {
 		]);
 	}
 
-	public function delete(int $id)
-	    {
+	public function delete() {
 	        $ItemManager = new ItemManager($this->pdo);
 
 	        if (isset($_POST['id'])) {
-	            $ItemManager->delete($_POST['id']);
+	            if($ItemManager->delete($_POST['id'])) {
+	            	header('Location: /');
+	        		exit();
+	            }
 	        }
-
-	        header('Location: /');
-	        exit();
 	    }
 }

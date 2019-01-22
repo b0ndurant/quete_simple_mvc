@@ -31,10 +31,10 @@ class ItemManager extends AbstractManager {
         return $statement->execute();
     }
 
-    public function delete(int $id): int
+    public function delete(int $id): bool
     {
         $statement = $this->pdo->prepare("DELETE FROM ". self::TABLE . " WHERE id=:id");
-        $statement->bindvalue('id', $item->getId(), \PDO::PARAM_INT);
+        $statement->bindvalue('id', $id, \PDO::PARAM_INT);
 
         return $statement->execute();
     }
